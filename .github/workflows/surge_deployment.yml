@@ -24,19 +24,20 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Install NodeJS
+      
       uses: actions/setup-node@v2-beta
       with:
          node-version: 12
-
-     uses: borales/actions-yarn@v2.0.0
-       with:
+    - name: Github action for yarn
+      uses: borales/actions-yarn@v2.0.0
+      with:
           cmd: intsall # will run 'yarn install' command
-   - name: Build react app
-     run: yarn build
-   - name: Install surge
-     run: npm run install --global surge
-   - name: Deploy to surge  
-     run: surge ./build saqbootcampaasmnt2.surge.sh --token ${{secrets.surge_token}}
+    - name: Build react app
+      run: yarn build
+    - name: Install surge
+      run: npm run install --global surge
+    - name: Deploy to surge  
+      run: surge ./build saqbootcampaasmnt2.surge.sh --token ${{secrets.surge_token}}
      
            
       
