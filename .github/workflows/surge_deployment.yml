@@ -35,7 +35,7 @@ jobs:
     - name: Build react app
       run: yarn build
     - name: Install surge
-      run: npm run install --global surge
+      run: npm install --global surge
     - name: Deploy to surge  
       run: surge ./build saqbootcampaasmnt2.surge.sh --token ${{secrets.surge_token}}
      
