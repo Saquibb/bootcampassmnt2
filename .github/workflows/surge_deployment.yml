@@ -31,7 +31,7 @@ jobs:
     - name: Github action for yarn
       uses: borales/actions-yarn@v2.0.0
       with:
-          cmd: intsall # will run 'yarn install' command
+          cmd: install # will run 'yarn install' command
     - name: Build react app
       run: yarn build
     - name: Install surge
